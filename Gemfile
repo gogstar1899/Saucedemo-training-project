@@ -1,0 +1,12 @@
+source 'https://rubygems.org'
+
+gem 'rspec', '~> 3.12'
+gem 'rspec-core', '~> 3.12'
+gem 'selenium-webdriver', '~> 4.8'
+gem 'yaml', '~> 0.2.1'
+gem 'rubocop', '~> 1.44', '>= 1.44.1'
+gem 'rubocop-rspec', '~> 2.18', '>= 2.18.1'
+gem 'rubocop-performance', '~> 1.15', '>= 1.15.2'
+gem 'rubocop-packaging', '~> 0.5.2'
+gem 'solargraph'
+gem 'pry', '~> 0.14.2'

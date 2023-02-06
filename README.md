@@ -1,5 +1,5 @@
 # Saucedemo training project
-Creating test automation project for learning and practice - Capybara, Rspec and Selenium
+Creating test automation project for learning and practice - Rspec and Selenium
 Saucedemo.com is webside created for practice test automation
 
 # first_step
