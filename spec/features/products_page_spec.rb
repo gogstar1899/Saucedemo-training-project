@@ -9,7 +9,7 @@ RSpec.describe ProductsPage do
     include_context 'login'
 
     it 'verify that there are products in Products page' do
-        order.testing
+        order.click_dropdown
         sleep(5)
     end
 
