@@ -13,6 +13,10 @@ class LoginPage
     @driver = driver
   end
 
+  def login_button
+    @driver.find_element(LOGIN_BTN)
+  end
+
   def fill_username(value)
     @driver.find_element(USERNAME_FIELD).send_keys(value)
   end

@@ -17,3 +17,6 @@ Test Plan, Test Scenario and Test Case.
 
 # fifth_step
 Create page objects
+
+# sixth_step
+Create spec files
