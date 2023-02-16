@@ -10,20 +10,40 @@ class ProductsPage
   ADD_TO_CART_BOLT_TSHIRT = { name: 'add-to-cart-sauce-labs-bolt-t-shirt' }.freeze
   ADD_TO_CART_BIKE_LIGHT = { name: 'add-to-cart-sauce-labs-bike-light' }.freeze
   ADD_TO_CART_BACKPACK = { name: 'add-to-cart-sauce-labs-backpack' }.freeze
-  DESCRIPTION_RED_TSHIRT = { xpath: "//a[@pathname='/inventory.html']/div[@innertext='Test.allTheThings() T-Shirt (Red)']" }.freeze
-  DESCRIPTION_ONESIE = { xpath: "//a[@pathname='/inventory.html']/div[@innertext='Sauce Labs Onesie']" }.freeze
-  DESCRIPTION_JACKET = { xpath: "//a[@pathname='/inventory.html']/div[@innertext='Sauce Labs Fleece Jacket']" }.freeze
-  DESCRIPTION_BOLT_TSHIRT = { xpath: "//a[@pathname='/inventory.html']/div[@innertext='Sauce Labs Bolt T-Shirt']" }.freeze
-  DESCRIPTION_BIKE_LIGHT = { xpath: "//a[@pathname='/inventory.html']/div[@innertext='Sauce Labs Bike Light']" }.freeze
-  DESCRIPTION_BACKPACK = { xpath: "//a[@pathname='/inventory.html']/div[@innertext='Sauce Labs Backpack']" }.freeze
+  REMOVE_RED_TSHIRT = { name: 'remove-test.allthethings()-t-shirt-(red)' }.freeze
+  REMOVE_ONESIE = { name: 'remove-sauce-labs-onesie' }.freeze
+  REMOVE_JACKET = { name: 'remove-labs-fleece-jacket' }.freeze
+  REMOVE_BOLT_TSHIRT = { name: 'remove-sauce-labs-bolt-t-shirt' }.freeze
+  REMOVE_BIKE_LIGHT = { name: 'remove-sauce-labs-bike-light' }.freeze
+  REMOVE_BACKPACK = { name: 'remove-sauce-labs-backpack' }.freeze
+  GO_TO_DESCRIPTION_RED_TSHIRT = { id: 'item_3_title_link' }.freeze
+  GO_TO_DESCRIPTION_ONESIE = { id: 'item_2_title_link' }.freeze
+  GO_TO_DESCRIPTION_JACKET = { id: 'item_5_title_link' }.freeze
+  GO_TO_DESCRIPTION_BOLT_TSHIRT = { id: 'item_1_title_link' }.freeze
+  GO_TO_DESCRIPTION_BIKE_LIGHT = { id: 'item_0_title_link' }.freeze
+  GO_TO_DESCRIPTION_BACKPACK = { id: 'item_4_title_link' }.freeze
   BACK_TO_PRODUCTS = { name: 'back-to-products' }.freeze
+  IN_TO_DESCRIPTION_BIKE_LIGHT = { css: '.inventory_details_desc.large_size' }.freeze
+  IN_TO_DESCRIPTION_BIKE_LIGHT_PRICE = { css: '.inventory_details_price' }.freeze
 
   def initialize(driver)
     @driver = driver
   end
 
+  def in_to_bike_light_description
+    @driver.find_element(IN_TO_DESCRIPTION_BIKE_LIGHT)
+  end
+
+  def in_to_bike_light_price
+    @driver.find_element(IN_TO_DESCRIPTION_BIKE_LIGHT_PRICE).text
+  end
+
   def verify_website_logo
-    @driver.find_element(WEBSITE_LOGO).displayed?
+    @driver.find_element(WEBSITE_LOGO)
+  end
+
+  def shopping_cart_element
+    @driver.find_element(SHOPPING_CART).text.to_i
   end
 
   def click_shopping_cart
@@ -54,28 +74,52 @@ class ProductsPage
     @driver.find_element(ADD_TO_CART_BACKPACK).click
   end
 
+  def remove_red_tshirt
+    @driver.find_element(REMOVE_RED_TSHIRT).click
+  end
+
+  def remove_onesie
+    @driver.find_element(REMOVE_ONESIE).click
+  end
+
+  def remove_jacket
+    @driver.find_element(REMOVE_JACKET).click
+  end
+
+  def remove_bolt_tshirt
+    @driver.find_element(REMOVE_BOLT_TSHIRT).click
+  end
+
+  def remove_bike_light
+    @driver.find_element(REMOVE_BIKE_LIGHT).click
+  end
+
+  def remove_backpack
+    @driver.find_element(REMOVE_BACKPACK).click
+  end
+
   def description_red_tshirt
-    @driver.find_element(DESCRIPTION_RED_TSHIRT).click
+    @driver.find_element(GO_TO_DESCRIPTION_RED_TSHIRT).click
   end
 
   def description_onesie
-    @driver.find_element(DESCRIPTION_ONESIE).click
+    @driver.find_element(GO_TO_DESCRIPTION_ONESIE).click
   end
 
   def description_jacket
-    @driver.find_element(DESCRIPTION_JACKET).click
+    @driver.find_element(GO_TO_DESCRIPTION_JACKET).click
   end
 
   def description_bolt_tshirt
-    @driver.find_element(DESCRIPTION_BOLT_TSHIRT).click
+    @driver.find_element(GO_TO_DESCRIPTION_BOLT_TSHIRT).click
   end
 
   def description_bike_light
-    @driver.find_element(DESCRIPTION_BIKE_LIGHT).click
+    @driver.find_element(GO_TO_DESCRIPTION_BIKE_LIGHT).click
   end
 
   def description_backpack
-    @driver.find_element(DESCRIPTION_BACKPACK).click
+    @driver.find_element(GO_TO_DESCRIPTION_BACKPACK).click
   end
 
   def back_to_products

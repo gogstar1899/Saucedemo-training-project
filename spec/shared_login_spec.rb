@@ -14,7 +14,7 @@ RSpec.shared_context 'login' do
       login.fill_password(password)
       login.click_login
       @wait.until { products.verify_website_logo }
-      expect(products.verify_website_logo)
+      expect(products.verify_website_logo).to be_displayed
     end
     
 end

@@ -17,13 +17,21 @@ class YourCart
     REMOVE_BIKE_LIGHT = { name: 'remove-sauce-labs-bike-light' }.freeze
     REMOVE_JACKET = { name: 'remove-sauce-labs-fleece-jacket' }.freeze
     REMOVE_RED_TSHIRT = { name: 'remove-test.allthethings()-t-shirt-(red)' }.freeze
+    REMOVE_CART_ITEM = { css: '.removed_cart_item' }.freeze
+    CHECKOUT_OVERVIEW = { css: '.title' }.freeze
+    ERROR_MESSAGE = { css: '.error.error-message-container' }.freeze
+    THANKS_MESSAGE = { css: '.complete-header' }.freeze
 
     def initialize(driver)
         @driver = driver
     end
 
+    def continue_shopping_element
+        @driver.find_element(CONTINUE_SHOPPING_BUTTON)
+    end
+
     def click_continue_shopping
-        @driver.find_element(CONTINUE_SHOPPING_BUTTON).click
+        continue_shopping_element.click
     end
 
     def click_checkout
@@ -42,20 +50,32 @@ class YourCart
         @driver.find_element(ZIP_CODE_FIELD).send_keys(value)
     end
 
+    def continue_button_element
+        @driver.find_element(CONTINUE_BUTTON)
+    end
+
     def click_continue
-        @driver.find_element(CONTINUE_BUTTON).click
+        continue_button_element.click
     end
 
     def click_cancel
         @driver.find_element(CANCEL_BUTTON).click
     end
 
+    def finish_button_element
+        @driver.find_element(FINISH_BUTTON)
+    end
+
     def click_finish
-        @driver.find_element(FINISH_BUTTON).click
+        finish_button_element.click
+    end
+
+    def back_home_element
+        @driver.find_element(BACK_HOME_BUTTON)
     end
     
     def click_back_home
-        @driver.find_element(BACK_HOME_BUTTON).click
+        back_home_element.click
     end
 
     def click_remove_backpack
@@ -81,4 +101,21 @@ class YourCart
     def click_remove_red_tshirt
         @driver.find_element(REMOVE_RED_TSHIRT).click
     end
+
+    def removed_item
+        @driver.find_element(REMOVE_CART_ITEM)
+    end
+
+    def overview_element
+        @driver.find_element(CHECKOUT_OVERVIEW)
+    end
+
+    def error_message_element
+        @driver.find_element(ERROR_MESSAGE)
+    end
+
+    def thank_you_message
+        @driver.find_element(THANKS_MESSAGE)
+    end
+
 end

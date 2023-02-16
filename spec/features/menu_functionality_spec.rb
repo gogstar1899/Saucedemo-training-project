@@ -18,7 +18,8 @@ RSpec.describe MenuOptions, type: :feature do
         menu.click_close_menu_button
         @wait.until { menu.menu_button_element.displayed? }
         url = 'https://www.saucedemo.com/inventory.html'
-        expect(url).not_to have_selector('.bm-menu-wrap') 
+        menu_element = '.bm-menu-wrap'
+        expect(url).not_to have_selector(menu_element) 
     end
 
     it 'verify that the "ALL ITEM" submenu navigate to the right page' do

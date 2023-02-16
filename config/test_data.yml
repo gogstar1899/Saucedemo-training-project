@@ -7,3 +7,8 @@ username:
 password:
   all_password: 'secret_sauce'
   invalid_password: 'invalidpassword'
+names:
+  real_first_name: 'Georgi'
+  real_last_name: 'Demirev'
+zip_code:
+  real_zip_code: '4000'
