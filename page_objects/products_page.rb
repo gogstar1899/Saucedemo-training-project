@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-#This class is for ProductsPage
+# This class is for ProductsPage
 class ProductsPage
   WEBSITE_LOGO = { xpath: '//*[@id="header_container"]/div[2]/div[1]' }.freeze
   SHOPPING_CART = { id: 'shopping_cart_container' }.freeze
@@ -31,7 +31,7 @@ class ProductsPage
   end
 
   def in_to_bike_light_description
-    @driver.find_element(IN_TO_DESCRIPTION_BIKE_LIGHT)
+    @driver.find_element(IN_TO_DESCRIPTION_BIKE_LIGHT).text
   end
 
   def in_to_bike_light_price
@@ -43,15 +43,15 @@ class ProductsPage
   end
 
   def shopping_cart_element
-    @driver.find_element(SHOPPING_CART).text.to_i
+    @driver.find_element(SHOPPING_CART)
+  end
+
+  def shopping_cart_text
+    shopping_cart_element.text.to_i
   end
 
   def click_shopping_cart
-    @driver.find_element(SHOPPING_CART).click
-  end
-
-  def add_red_tshirt
-    @driver.find_element(ADD_TO_CART_RED_TSHIRT).click
+    shopping_cart_element.click
   end
 
   def add_onesie
@@ -125,5 +125,4 @@ class ProductsPage
   def back_to_products
     @driver.find_element(BACK_TO_PRODUCTS).click
   end
-
 end

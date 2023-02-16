@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-#This class is for LoginPage
+# This class is for LoginPage
 class LoginPage
   USERNAME_FIELD = { id: 'user-name' }.freeze
   PASSWORD_FIELD = { id: 'password' }.freeze
@@ -26,7 +26,7 @@ class LoginPage
   end
 
   def click_login
-    @driver.find_element(LOGIN_BTN).click
+    login_button.click
   end
 
   def invalid_credentials_error_message
@@ -48,5 +48,4 @@ class LoginPage
   def close_error_message
     @driver.find_element(ERROR_MESSACE_CLOSE).click
   end
-
 end
