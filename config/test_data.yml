@@ -1,0 +1,14 @@
+username:
+  standard_user: 'standard_user'
+  locked_out_user: 'locked_out_user'
+  problem_user: 'problem_user'
+  performance_glitch_user: 'performance_glitch_user'
+  invalid_user: 'invaliduser'
+password:
+  all_password: 'secret_sauce'
+  invalid_password: 'invalidpassword'
+names:
+  real_first_name: 'Georgi'
+  real_last_name: 'Demirev'
+zip_code:
+  real_zip_code: '4000'
