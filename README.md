@@ -83,4 +83,4 @@ Finished in 5.24 seconds (files took 0.93991 seconds to load)
 
 ## Acknowledgments
 
-* Special thanks to SAUCELABS(https://saucelabs.com) for providing this website.
+* Special thanks to [SAUCELABS](https://saucelabs.com) for providing this website.
