@@ -74,12 +74,12 @@ Finished in 5.24 seconds (files took 0.93991 seconds to load)
 ## Built With
 
 * [RSpec](https://rspec.info/) - The testing framework used.
-* [Selenium-WebDriver] (https://www.selenium.dev/documentation/webdriver/) - web framework that permits to execute cross-browser tests.
+* [WebDriver] (https://www.selenium.dev/documentation/webdriver/) - web framework that permits to execute cross-browser tests.
 * [Bundler](https://bundler.io/) - Gem Dependency Management.
 
 ## Authors
 
-* **Georgi Demirev** - *Initial work* - [gogstar1899](https://github.com/gogstar1899)
+* **Georgi Demirev** [gogstar1899](https://github.com/gogstar1899)
 
 ## Acknowledgments
 
