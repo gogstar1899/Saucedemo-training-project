@@ -1,10 +1,9 @@
 pipeline {
     agent any
-
     stages {
         stage('Tests') {
             steps {
-                sh run_tests.sh
+                sh 'run_tests.sh'
             }
         }
     }
