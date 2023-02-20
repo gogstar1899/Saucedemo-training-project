@@ -36,6 +36,7 @@ RSpec.describe MenuOptions, type: :feature do
   # TC_2.6
   it 'verify that the "LOGOUT" submenu is logout the user from the account' do
     @driver.navigate.back
+    @wait.until { menu.about_element.displayed? }
     menu.click_logout_button
     expect(login.login_button).to be_displayed
   end
