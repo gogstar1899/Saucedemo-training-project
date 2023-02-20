@@ -13,39 +13,39 @@ class LoginPage
     @driver = driver
   end
 
-  def login_button
+  def login_button # locates login button element
     @driver.find_element(LOGIN_BTN)
   end
 
-  def fill_username(value)
+  def fill_username(value) # sends data to username field
     @driver.find_element(USERNAME_FIELD).send_keys(value)
   end
 
-  def fill_password(value)
+  def fill_password(value) # sends data to password field
     @driver.find_element(PASSWORD_FIELD).send_keys(value)
   end
 
-  def click_login
+  def click_login # clicks login button
     login_button.click
   end
 
-  def invalid_credentials_error_message
+  def invalid_credentials_error_message # takes the text from error message element
     @driver.find_element(INVALID_CREDS_ERROR_MESSAGE).text
   end
 
-  def clear_username
+  def clear_username # this is method that locate the username field, mark the text init and delete it
     @driver.find_element(USERNAME_FIELD).click
     @driver.action.key_down(:command).send_keys('a').key_up(:command).perform
     @driver.action.key_down(:backspace).key_up(:backspace).perform
   end
 
-  def clear_password
+  def clear_password # same as privious method but for password field
     @driver.find_element(USERNAME_FIELD).click
     @driver.action.key_down(:command).send_keys('a').key_up(:command).perform
     @driver.action.key_down(:backspace).key_up(:backspace).perform
   end
 
-  def close_error_message
+  def close_error_message # closes the error message popup
     @driver.find_element(ERROR_MESSACE_CLOSE).click
   end
 end
