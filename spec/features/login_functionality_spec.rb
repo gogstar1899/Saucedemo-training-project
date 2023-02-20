@@ -3,7 +3,7 @@
 require_relative '../spec_helper'
 
 RSpec.describe LoginPage do
-  creds = YAML.load_file('/Users/gdemirev/Desktop/Saucedemo training project/config/test_data.yml')
+  creds = YAML.load_file('./config/test_data.yml')
   let(:user) { creds.fetch('username')['standard_user'] }
   let(:invalid_user) { creds.fetch('username')['invalid_user'] }
   let(:password) { creds.fetch('password')['all_password'] }
