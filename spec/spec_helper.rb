@@ -125,7 +125,7 @@ RSpec.configure do |config|
       # options.add_argument('--disable-dev-shm-usage')
       # options.add_argument('--window-size=1920x1080')
       @wait = Selenium::WebDriver::Wait.new(timeout: 10)
-      @driver = Selenium::WebDriver.for :chrome, options: options
+      @driver = Selenium::WebDriver.for(:chrome, options:)
       @driver.manage.window.maximize
       @driver.get(env_data[:url])
     end

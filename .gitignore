@@ -1,2 +1,4 @@
 .DS_Storecd
 Dockerfile
+reports
+run_tests.sh

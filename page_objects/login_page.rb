@@ -13,39 +13,47 @@ class LoginPage
     @driver = driver
   end
 
-  def login_button # locates login button element
+  # locates login button element
+  def login_button
     @driver.find_element(LOGIN_BTN)
   end
 
-  def fill_username(value) # sends data to username field
+  # sends data to username field
+  def fill_username(value)
     @driver.find_element(USERNAME_FIELD).send_keys(value)
   end
 
-  def fill_password(value) # sends data to password field
+  # sends data to password field
+  def fill_password(value)
     @driver.find_element(PASSWORD_FIELD).send_keys(value)
   end
 
-  def click_login # clicks login button
+  # clicks login button
+  def click_login
     login_button.click
   end
 
-  def invalid_credentials_error_message # takes the text from error message element
+  # takes the text from error message element
+  def invalid_credentials_error_message
     @driver.find_element(INVALID_CREDS_ERROR_MESSAGE).text
   end
 
-  def clear_username # this is method that locate the username field, mark the text init and delete it
+  # this is method that locate the username field, mark the text init and delete it
+  def clear_username
     @driver.find_element(USERNAME_FIELD).click
     @driver.action.key_down(:command).send_keys('a').key_up(:command).perform
     @driver.action.key_down(:backspace).key_up(:backspace).perform
   end
 
-  def clear_password # same as privious method but for password field
+  # same as privious method but for password field
+  def clear_password
     @driver.find_element(USERNAME_FIELD).click
     @driver.action.key_down(:command).send_keys('a').key_up(:command).perform
     @driver.action.key_down(:backspace).key_up(:backspace).perform
   end
 
-  def close_error_message # closes the error message popup
+  # closes the error message popup
+  def close_error_message
     @driver.find_element(ERROR_MESSACE_CLOSE).click
   end
 end

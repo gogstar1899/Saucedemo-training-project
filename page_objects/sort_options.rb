@@ -24,19 +24,23 @@ class SortOptions
     @driver = driver
   end
 
-  def click_dropdown # clicks the sort options dropdown menu
+  # clicks the sort options dropdown menu
+  def click_dropdown
     @driver.find_element(SORT_DROPDOWN).click
   end
 
-  def z_to_a_element # locates the NAME(Z TO A) sort option
+  # locates the NAME(Z TO A) sort option
+  def z_to_a_element
     @driver.find_element(SORT_Z_TO_A)
   end
 
-  def first_element_name_text # takes the first element text after they are sorted
+  # takes the first element text after they are sorted
+  def first_element_name_text
     @driver.find_element(FIRST_ELEMENT_NAME).text
   end
 
-  def names_sorted_alphabetically # takes the names of elements on the page and store them in array and sort them alphabetically
+  # takes the names of elements on the page and store them in array and sort them alphabetically
+  def names_sorted_alphabetically
     names_array = [
       @driver.find_element(FIRST_ELEMENT_NAME).text,
       @driver.find_element(SECOND_ELEMENT_NAME).text,
@@ -48,13 +52,15 @@ class SortOptions
     names_array.sort { |a, b| a <=> b }
   end
 
-  def frist_element_price # takes first element price and remove the dollar sign and convert the string to float
+  # takes first element price and remove the dollar sign and convert the string to float
+  def frist_element_price
     price = @driver.find_element(FIRST_ELEMENT_PRICE).text
     remove_dollar = price.to_s.gsub(/[^0-9.]/, '')
     remove_dollar.to_f
   end
 
-  def prices_array # takes the prices of all elements on the page and store them in array
+  # takes the prices of all elements on the page and store them in array
+  def prices_array
     [
       @driver.find_element(FIRST_ELEMENT_PRICE).text,
       @driver.find_element(SECOND_ELEMENT_PRICE).text,
@@ -65,25 +71,30 @@ class SortOptions
     ]
   end
 
-  def price_sorted # removes the dollar signs from prices_array, then convert the srtings to float and sort the numbers 
+  # removes the dollar signs from prices_array, then convert the srtings to float and sort the numbers
+  def price_sorted
     price = prices_array.map { |x| x.to_s.gsub(/[^0-9.]/, '') }
     price_without_dollar = price.map!(&:to_f)
     price_without_dollar.sort { |a, b| a <=> b }
   end
 
-  def order_a_to_z # clicks the Name(A to Z) sort option
+  # clicks the Name(A to Z) sort option
+  def order_a_to_z
     @driver.find_element(SORT_A_TO_Z).click
   end
 
-  def order_z_to_a # clicks the Name(Z to A) sort option
+  # clicks the Name(Z to A) sort option
+  def order_z_to_a
     z_to_a_element.click
   end
 
-  def order_low_to_high # clicks the Price(low to high) sort option
+  # clicks the Price(low to high) sort option
+  def order_low_to_high
     @driver.find_element(SORT_LOW_TO_HIGH).click
   end
 
-  def order_high_to_low # clicks the Price(high to low) sort option
+  # clicks the Price(high to low) sort option
+  def order_high_to_low
     @driver.find_element(SORT_HIGH_TO_LOW).click
   end
 end

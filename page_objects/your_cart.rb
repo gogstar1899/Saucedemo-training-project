@@ -26,95 +26,118 @@ class YourCart
     @driver = driver
   end
 
-  def continue_shopping_element # locates the continue shopping button on cart page
+  # locates the continue shopping button on cart page
+  def continue_shopping_element
     @driver.find_element(CONTINUE_SHOPPING_BUTTON)
   end
 
-  def click_continue_shopping # clicks the continue shopping button on cart page
+  # clicks the continue shopping button on cart page
+  def click_continue_shopping
     continue_shopping_element.click
   end
 
-  def click_checkout # clicks the checkout button on cart page
+  # clicks the checkout button on cart page
+  def click_checkout
     @driver.find_element(CHECKOUT_BUTTON).click
   end
 
-  def fill_first_name(value) # sends data to first name field
+  # sends data to first name field
+  def fill_first_name(value)
     @driver.find_element(FIRST_NAME_FIELD).send_keys(value)
   end
 
-  def fill_last_name(value) # sends data to last name field
+  # sends data to last name field
+  def fill_last_name(value)
     @driver.find_element(LAST_NAME_FIELD).send_keys(value)
   end
 
-  def fill_zip_code(value) # send data to zip code field
+  # send data to zip code field
+  def fill_zip_code(value)
     @driver.find_element(ZIP_CODE_FIELD).send_keys(value)
   end
 
-  def continue_button_element # locates the continue button on cart page
+  # locates the continue button on cart page
+  def continue_button_element
     @driver.find_element(CONTINUE_BUTTON)
   end
 
-  def click_continue # clicks the continue button on the page
+  # clicks the continue button on the page
+  def click_continue
     continue_button_element.click
   end
 
-  def click_cancel # clicks cancel button on the page
+  # clicks cancel button on the page
+  def click_cancel
     @driver.find_element(CANCEL_BUTTON).click
   end
 
-  def finish_button_element # locates the finish button element
+  # locates the finish button element
+  def finish_button_element
     @driver.find_element(FINISH_BUTTON)
   end
 
-  def click_finish # clicks the finish button
+  # clicks the finish button
+  def click_finish
     finish_button_element.click
   end
 
-  def back_home_element # locates the back to home button element
+  # locates the back to home button element
+  def back_home_element
     @driver.find_element(BACK_HOME_BUTTON)
   end
 
-  def click_back_home # clicks back to home button
+  # clicks back to home button
+  def click_back_home
     back_home_element.click
   end
 
-  def click_remove_backpack # clicks the remove button for Sauce Labs Backpack on cart page
+  # clicks the remove button for Sauce Labs Backpack on cart page
+  def click_remove_backpack
     @driver.find_element(REMOVE_BACKPACK).click
   end
 
-  def click_remove_bolt_tshirt # clicks the remove button for Sauce Labs Bolt T-Shirt on cart page 
+  # clicks the remove button for Sauce Labs Bolt T-Shirt on cart page
+  def click_remove_bolt_tshirt
     @driver.find_element(REMOVE_BOLT_TSHIRT).click
   end
 
-  def click_remove_onesie # clicks the remove button for Sauce Labs Onesie on cart page
+  # clicks the remove button for Sauce Labs Onesie on cart page
+  def click_remove_onesie
     @driver.find_element(REMOVE_ONESIE).click
   end
 
-  def click_remove_bike_light # clicks the remove button for Sauce Labs Bike Light on cart page
+  # clicks the remove button for Sauce Labs Bike Light on cart page
+  def click_remove_bike_light
     @driver.find_element(REMOVE_BIKE_LIGHT).click
   end
 
-  def click_remove_jacket # clicks the remove button for Sauce Labs Fleece Jacket on cart page
+  # clicks the remove button for Sauce Labs Fleece Jacket on cart page
+  def click_remove_jacket
     @driver.find_element(REMOVE_JACKET).click
   end
 
-  def click_remove_red_tshirt # clicks the remove button for Red T-Shirt on cart page
+  # clicks the remove button for Red T-Shirt on cart page
+  def click_remove_red_tshirt
     @driver.find_element(REMOVE_RED_TSHIRT).click
   end
 
-  def removed_item # locates the element that is expected not be displayed when all items from the cart are removed
+  # locates the element that is expected not be displayed when all items from the cart are removed
+  def removed_item
     @driver.find_element(REMOVE_CART_ITEM)
   end
 
-  def overview_element # locates the overview label on checkout step two page
+  # locates the overview label on checkout step two page
+  def overview_element
     @driver.find_element(CHECKOUT_OVERVIEW)
   end
 
-  def error_message_element_text # tekes the text from error message for empty field on ckeckout step one page
+  # tekes the text from error message for empty field on ckeckout step one page
+  def error_message_element_text
     @driver.find_element(ERROR_MESSAGE).text
   end
 
-  def thank_you_message_text # takes the text from thank message when you finish the order
+  # takes the text from thank message when you finish the order
+  def thank_you_message_text
     @driver.find_element(THANKS_MESSAGE).text
   end
 end

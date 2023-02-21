@@ -30,99 +30,123 @@ class ProductsPage
     @driver = driver
   end
 
-  def in_to_bike_light_description # takes the text from description of Sauce Labs Bike Light
+  # takes the text from description of Sauce Labs Bike Light
+  def in_to_bike_light_description
     @driver.find_element(IN_TO_DESCRIPTION_BIKE_LIGHT).text
   end
 
-  def in_to_bike_light_price # takes the text of the price of Sauce Labs Bike Light
+  # takes the text of the price of Sauce Labs Bike Light
+  def in_to_bike_light_price
     @driver.find_element(IN_TO_DESCRIPTION_BIKE_LIGHT_PRICE).text
   end
 
-  def verify_website_logo # locates the website logo element
+  # locates the website logo element
+  def verify_website_logo
     @driver.find_element(WEBSITE_LOGO)
   end
 
-  def shopping_cart_element # locates the website shoping cart logo
+  # locates the website shoping cart logo
+  def shopping_cart_element
     @driver.find_element(SHOPPING_CART)
   end
 
-  def shopping_cart_text # takes the number that is displayed on shoping cart when you add items init
+  # takes the number that is displayed on shoping cart when you add items init
+  def shopping_cart_text
     shopping_cart_element.text.to_i
   end
 
-  def click_shopping_cart # clicks the shopping cart
+  # clicks the shopping cart
+  def click_shopping_cart
     shopping_cart_element.click
   end
 
-  def add_onesie # adds Sauce Labs Onesie to the cart
+  # adds Sauce Labs Onesie to the cart
+  def add_onesie
     @driver.find_element(ADD_TO_CART_ONESIE).click
   end
 
-  def add_jacket # adds Sauce Labs Fleece Jacket to the cart
+  # adds Sauce Labs Fleece Jacket to the cart
+  def add_jacket
     @driver.find_element(ADD_TO_CART_JACKET).click
   end
 
-  def add_bolt_tshirt # adds Sauce Labs Bolt T-Shirt to the cart
+  # adds Sauce Labs Bolt T-Shirt to the cart
+  def add_bolt_tshirt
     @driver.find_element(ADD_TO_CART_BOLT_TSHIRT).click
   end
 
-  def add_bike_light # adds Sauce Labs Bike Light to the cart
+  # adds Sauce Labs Bike Light to the cart
+  def add_bike_light
     @driver.find_element(ADD_TO_CART_BIKE_LIGHT).click
   end
 
-  def add_backpack # adds Sauce Labs Backpack to the cart
+  # adds Sauce Labs Backpack to the cart
+  def add_backpack
     @driver.find_element(ADD_TO_CART_BACKPACK).click
   end
 
-  def remove_red_tshirt # removes Red T-Shirt from the cart
+  # removes Red T-Shirt from the cart
+  def remove_red_tshirt
     @driver.find_element(REMOVE_RED_TSHIRT).click
   end
 
-  def remove_onesie # removes Sauce Labs Onesie from the cart
+  # removes Sauce Labs Onesie from the cart
+  def remove_onesie
     @driver.find_element(REMOVE_ONESIE).click
   end
 
-  def remove_jacket # removes Sauce Labs Fleece Jacket from the cart
+  # removes Sauce Labs Fleece Jacket from the cart
+  def remove_jacket
     @driver.find_element(REMOVE_JACKET).click
   end
 
-  def remove_bolt_tshirt # removes Sauce Labs Bolt T-Shirt from the cart
+  # removes Sauce Labs Bolt T-Shirt from the cart
+  def remove_bolt_tshirt
     @driver.find_element(REMOVE_BOLT_TSHIRT).click
   end
 
-  def remove_bike_light # removes Sauce Labs Bike Light from the cart
+  # removes Sauce Labs Bike Light from the cart
+  def remove_bike_light
     @driver.find_element(REMOVE_BIKE_LIGHT).click
   end
 
-  def remove_backpack # removes Sauce Labs Backpack from the cart
+  # removes Sauce Labs Backpack from the cart
+  def remove_backpack
     @driver.find_element(REMOVE_BACKPACK).click
   end
 
-  def description_red_tshirt # removes Red T-Shirt from the cart
+  # removes Red T-Shirt from the cart
+  def description_red_tshirt
     @driver.find_element(GO_TO_DESCRIPTION_RED_TSHIRT).click
   end
 
-  def description_onesie # removes Sauce Labs Onesie from the cart
+  # removes Sauce Labs Onesie from the cart
+  def description_onesie
     @driver.find_element(GO_TO_DESCRIPTION_ONESIE).click
   end
 
-  def description_jacket # removes Sauce Labs Fleece Jacket from the cart
+  # removes Sauce Labs Fleece Jacket from the cart
+  def description_jacket
     @driver.find_element(GO_TO_DESCRIPTION_JACKET).click
   end
 
-  def description_bolt_tshirt # goes to Sauce Labs Bolt T-Shirt description
+  # goes to Sauce Labs Bolt T-Shirt description
+  def description_bolt_tshirt
     @driver.find_element(GO_TO_DESCRIPTION_BOLT_TSHIRT).click
   end
 
-  def description_bike_light # goes to Sauce Labs Bile Light description
+  # goes to Sauce Labs Bile Light description
+  def description_bike_light
     @driver.find_element(GO_TO_DESCRIPTION_BIKE_LIGHT).click
   end
 
-  def description_backpack # goes to Sauce Labs Backpack description
+  # goes to Sauce Labs Backpack description
+  def description_backpack
     @driver.find_element(GO_TO_DESCRIPTION_BACKPACK).click
   end
 
-  def back_to_products # goes back to the products page
+  # goes back to the products page
+  def back_to_products
     @driver.find_element(BACK_TO_PRODUCTS).click
   end
 end
