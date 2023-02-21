@@ -1,3 +1,4 @@
-gem install bundler
+#!/bin/bash
+
 bundle install
-bundle exec rspec .
+bundle exec espec .
